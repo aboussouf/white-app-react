@@ -1,1 +1,2 @@
 test notes 20180427
+add components
