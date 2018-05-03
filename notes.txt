@@ -1,5 +1,0 @@
-20180503
-add components
-
-create app: https://github.com/facebook/create-react-app#creating-an-app
-demo du whiteapp
