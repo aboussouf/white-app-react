@@ -6,6 +6,7 @@ export const HomeView = () => (
   <div>
     <h4>Welcome!</h4>
     <img alt='This is a logo !' className='logo' src={logo} />
+    <button href="/Dashboard"/>
   </div>
 )
 
