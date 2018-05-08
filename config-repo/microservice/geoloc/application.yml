@@ -1,0 +1,60 @@
+
+keycloak-client:
+  server-url: http://localhost:8180/auth
+  realm: eerrealm
+server:
+   port: 8082
+
+spring:
+  application:
+     name: geoloc-services
+     output:
+        ansi:
+           enabled: always
+  datasource:
+    url: jdbc:h2:~/SGEER;AUTO_SERVER=true;MODE=PostgreSQL
+    platform: h2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+    driverClassName: org.h2.Driver
+  security:
+    oauth2:
+     client:
+       registration:
+            eerrealm: # This is the id used inside the redirect-uri-template, must be the same as your realm
+              client-id: geolocservices
+              client-secret: e92e5142-68a6-4ac3-b692-8b7cde9dedcd
+              client-name: ans
+              provider: keycloak
+              scope: openid, profile
+#              redirect-uri-template: "{baseUrl}/login/oauth2/code/{registrationId}"
+              redirect-uri-template: "{baseUrl}"
+              authorization-grant-type: authorization_code
+       provider:
+          keycloak:
+              token-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/token
+              authorization-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/auth
+              user-info-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/userinfo
+              jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
+              user-name-attribute: preferred_username
+              bearer-only : true
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+
+
+
