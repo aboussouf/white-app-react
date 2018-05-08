@@ -1,0 +1,45 @@
+server:
+  port: ${PORT:8085}
+mail:
+  host: 10.4.2.121
+  port: 25
+  protocol: smtp
+  username : khaia
+  password : Awb@2014
+sms:
+    username: ethix_notification_rt
+    password: Eth!@RtP
+    url: url
+ldap :
+  url: ldap://127.0.0.1:389
+  base: CN=EER,DC=MA,DC=SGMB
+  username: CN=eer,CN=EER,DC=MA,DC=SGMB
+  password: Awb@2014
+spring:
+  application:
+    name: prospect-services
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    database: h2
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:h2:~/SGEER;MODE=PostgreSQL;AUTO_SERVER=true
+    platform: h2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+
+
+
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+
+

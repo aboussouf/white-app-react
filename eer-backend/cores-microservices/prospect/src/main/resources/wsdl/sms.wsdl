@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:soapdemo_wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:soapdemo_wsdl">
+    <types>
+        <xsd:schema targetNamespace="urn:soapdemo_wsdl">
+            <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+            <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+            <xsd:complexType name="answersms">
+                <xsd:all>
+                    <xsd:element name="SMSSTATUSREPORT" type="xsd:string" />
+                    <xsd:element name="Motif" type="xsd:string" />
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="answersms_list">
+                <xsd:complexContent>
+                    <xsd:restriction base="SOAP-ENC:Array">
+                        <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:answersms[]" />
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="SendSMSRequest">
+        <part name="username" type="xsd:string" />
+        <part name="password" type="xsd:string" />
+        <part name="to" type="xsd:string" />
+        <part name="message" type="xsd:string" />
+        <part name="id" type="xsd:string" />
+        <part name="from" type="xsd:string" />
+        <part name="hdsend" type="xsd:string" />
+        <part name="binary" type="xsd:int" />
+        <part name="operator" type="xsd:string" />
+    </message>
+    <message name="SendSMSResponse">
+        <part name="return" type="xsd:int" />
+    </message>
+    <message name="QuerySMSReportRequest">
+        <part name="username" type="xsd:string" />
+        <part name="password" type="xsd:string" />
+        <part name="id" type="xsd:string" />
+    </message>
+    <message name="QuerySMSReportResponse">
+        <part name="QuerySMSReport_output" type="tns:answersms_list" />
+    </message>
+    <portType name="soapdemo_wsdlPortType">
+        <operation name="SendSMS">
+            <documentation>Envoi SMS</documentation>
+            <input message="tns:SendSMSRequest" />
+            <output message="tns:SendSMSResponse" />
+        </operation>
+        <operation name="QuerySMSReport">
+            <documentation>Statut</documentation>
+            <input message="tns:QuerySMSReportRequest" />
+            <output message="tns:QuerySMSReportResponse" />
+        </operation>
+    </portType>
+    <binding name="soapdemo_wsdlBinding" type="tns:soapdemo_wsdlPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="SendSMS">
+            <soap:operation soapAction="soapdemo_wsdl#SendSMS" style="rpc" />
+            <input>
+                <soap:body use="encoded" namespace="soapdemo_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="soapdemo_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="QuerySMSReport">
+            <soap:operation soapAction="soapdemo_wsdl#QuerySMSReport" style="rpc" />
+            <input>
+                <soap:body use="encoded" namespace="soapdemo_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="soapdemo_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+    </binding>
+    <service name="soapdemo_wsdl">
+        <port name="soapdemo_wsdlPort" binding="tns:soapdemo_wsdlBinding">
+            <soap:address location="https://10.6.1.196:443/api/webservicesms/index.php" />
+        </port>
+    </service>
+</definitions>

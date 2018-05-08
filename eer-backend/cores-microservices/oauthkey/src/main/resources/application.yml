@@ -1,0 +1,21 @@
+server.port : 7002
+debug: true
+keycloak.realm: core
+bearer-only: true
+keycloak.auth-server-url: http://localhost:8080/auth
+keycloak.ssl-required: external
+keycloak.resource: openid-token-backend
+keycloak.use-resource-role-mappings: true
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+
+ribbon:
+  eureka:
+    enabled: true
+
