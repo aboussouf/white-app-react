@@ -1,0 +1,164 @@
+.labelContainer-step2{
+    display: grid;
+    float: right;
+    margin-right: 17px;
+    margin-top: -28%;
+    width: 45%;
+}
+.label1-step1{
+
+    font-size: 56px;
+    color: #e2001a;
+    margin-top: 3%;
+}
+.label2-step1{
+    margin-left: 0%;
+    margin-top: -3%;
+    font-size: 27px;
+}
+.mon-agence {
+    margin-top: 4%;
+    font-size: 20px;
+    margin-left: 15%;
+    
+}
+.agence-name{
+    font-size: 18px;
+    color:#e2001a;
+    margin-left: 15%;
+
+}
+.agence-adresse{
+    font-size: 16px;
+    color:#393939;
+    margin-left: 15%;
+    
+}
+.geo-img{
+    margin-top: -12%;
+    
+}
+.rdv-img{
+    margin-top: -13%;
+
+}
+.time-img{
+    margin-top: -09%;
+
+}
+.button-step2-choisir-agence{
+    margin-right: 4%;
+    text-align: end;
+    color: #e2001a;
+    font-size: large;
+    
+}
+
+.button-step2-container{
+  
+    color: #e2001a;
+    font-size: large;
+    display: flex;
+}
+.button-step2-confirmer{
+    margin-left: 35%;
+    float: right;
+}
+
+.cls{
+    
+    margin-left: 25%;
+    margin-top: 25%;
+
+}
+
+.div.cls{
+    
+    margin-top: 22%;
+
+}
+
+.rdv-img{
+    width:50px;
+    height: auto;
+}
+div.cls {
+    color: #e2001a !important;
+    background-color: #e2001a !important;
+    width: 19%;
+    margin-top: 22%;
+    margin-left: 18%;
+  }
+
+#issamCalander { 
+    background-color: #e2001a;
+}
+.cls * {
+    width: 100%
+}
+.cls > * {
+    background-color: #e2001a !important;
+    
+}
+
+
+  .DocumentList
+  {
+      overflow-x:scroll;
+      overflow-y:hidden;
+      height:200px;
+      width:100%;
+      padding: 0 15px;
+  }
+  
+  .DocumentItem
+  {
+      border:1px solid black;
+      padding:0;
+      height:200px;
+  }
+  
+  .list-inline {
+    white-space:nowrap;
+  }
+  .scrolling{
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .div .span{
+      color: #e2001a;
+  }
+
+  .myTimePicker  {
+    width:310px
+    }
+    input {
+      text-align: center;
+      }
+    .myTimePicker > * {
+        background-color: #e2001a !important;
+        
+    }
+    
+    .myTimePicker > div > * {
+    
+      width: 100% !important;
+      
+    }
+    .myTimePicker > div > div > * {
+     
+      margin-left: 0% !important;
+      
+    }
+
+    .mon-agence {
+        margin-top: 90px;
+        font-size: 20px;
+    }
+
+    .button-step2-container {
+        color: #e2001a;
+        font-size: large;
+        display: flex;
+        padding-top: 50px;
+    }

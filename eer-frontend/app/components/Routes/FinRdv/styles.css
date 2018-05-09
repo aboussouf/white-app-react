@@ -1,0 +1,13 @@
+.red-text{
+    color:#e2001a;
+}
+
+.img-fluid-spec {
+    max-width: 70%;
+    height: auto;
+    margin: 0 0 0 100px;
+}
+
+.text-inline-spec{
+    white-space:nowrap;
+}

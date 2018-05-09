@@ -1,0 +1,50 @@
+div.cls {
+    color: #e2001a !important;
+    background-color: #e2001a !important;
+    width: 19%;
+    margin-top: 22%;
+    margin-left: 18%;
+  }
+
+#issamCalander { 
+    background-color: #e2001a;
+}
+.cls * {
+    width: 100%
+}
+.cls > * {
+    background-color: #e2001a !important;
+    
+}
+
+
+  .DocumentList
+  {
+      overflow-x:scroll;
+      overflow-y:hidden;
+      height:200px;
+      width:100%;
+      padding: 0 15px;
+  }
+  
+  .DocumentItem
+  {
+      border:1px solid black;
+      padding:0;
+      height:200px;
+  }
+  
+  .list-inline {
+    white-space:nowrap;
+  }
+  .scrolling{
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .div .span{
+      color: #e2001a;
+  }
+
+  .mytimepicker{
+      width:305px
+  }

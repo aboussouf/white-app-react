@@ -1,0 +1,80 @@
+.labelContainer{
+    display: grid;
+    float: right;
+    margin-right: 17px;
+    margin-top: 4%;
+    width: 45%;
+}
+.label1-step1{
+    font-size: 56px;
+    color: #e2001a;
+    margin-top: 3%;
+}
+.label2-step1{
+    margin-left: 9%;
+    font-size: 27px;
+}
+.button-enabled{
+    background-color: #e2001a !important;
+    width: 25%;
+    color: white !important;
+}
+
+.btn.danger.focus, {
+    background-color: #FFFFFF !important;
+    width: 25%;
+    color: #E2001A !important;
+}
+
+.button-disabled{
+    background-color: #FFFFFF !important;
+    width: 25%;
+    color: #E2001A !important;
+}
+
+.display-flex{
+    display: flex;
+}
+.mt-10{
+    margin-top: 10%;
+}
+.cv{
+    width: 18%;
+}
+.cv-container{
+    margin-left: 10%;
+    margin-top: 10%;
+}
+.form-container{
+    width: 13%;
+    float: right;
+    margin-right: 22%;
+    margin-top: -3%;
+}
+.form-width{
+    width: 100%;
+}
+.button-chose-agency{
+    float: right;
+    margin-right: -40%;
+    margin-top: 20%;
+    color: #e2001a;
+    bottom: 0;
+    font-size: large;
+}
+.bg-calander{
+    background-color: #e2001a !important;
+}
+
+.triangle-left {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 50px solid #555;
+	border-bottom: 25px solid transparent;
+}
+
+.card-step-inactive{
+    background-color: #E2001A
+}
+

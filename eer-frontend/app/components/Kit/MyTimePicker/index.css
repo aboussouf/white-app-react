@@ -1,0 +1,21 @@
+.myTimePicker  {
+width:310px
+}
+input {
+  text-align: center;
+  }
+.myTimePicker > * {
+    background-color: #e2001a !important;
+    
+}
+
+.myTimePicker > div > * {
+
+  width: 100% !important;
+  
+}
+.myTimePicker > div > div > * {
+ 
+  margin-left: 0% !important;
+  
+}

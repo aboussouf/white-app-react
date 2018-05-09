@@ -1,0 +1,55 @@
+.bg-color-red {
+    background-color: #e2001a;
+  }
+.margin-top-step {
+    margin-top: 1.5%;
+}
+.margin-right-step-1 {
+    margin-right: 10%;
+}
+.margin-right-step-2 {
+    margin-right: 10%;
+}
+
+.margin-left-step {
+    margin-left: 6.5%;
+}
+.card-step {
+    width: 41px !important;
+    height: 39px;
+    background-color: #e2001a !important;
+    border-radius: 0 !important;
+    border: 0px !important;
+}
+.card-step--active {
+    width: 41px !important;
+    height: 39px;
+    border-radius: 0 !important;
+    border: 0px !important;
+}
+.card-span-step{
+    margin-top: 2px;
+    margin-left: 13px;
+    color: #e2001a;
+    font-size: 22px;
+}
+.margin-top-step-label{
+    margin-top: 0%;
+    height: 39px;
+    width: 187px;
+    margin-left: 4px;
+}
+.margin-top-step-label--active{
+    margin-top: 0%;
+    height: 39px;
+    width: 187px;
+    border: 1px solid white;
+    margin-left: 4px;
+}
+.label-step{
+    line-height: 38px;
+    color: white;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: smaller;
+}

@@ -1,0 +1,18 @@
+button{
+    color : #e2001a!important;
+}
+
+.button-enabled>button
+{
+    color : #ffffff!important;
+    background-color: #e2001a!important;
+}
+
+.float-left > img {
+    width: 60px;
+}
+
+.float-right > img {
+    width: 60px;
+}
+
