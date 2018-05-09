@@ -10,6 +10,9 @@ import * as trois from '../../asserts/images/menu_icons/03.png'
 import * as quatre from '../../asserts/images/menu_icons/04.png'
 import * as cinq from '../../asserts/images/menu_icons/05.png'
 
+import { connect } from 'react-redux'
+import { getProspect } from '../../store/actions/Prospect'
+
 const elementsMenu = [
   { href: 'index.html', image: un, titre: '  Mon Espace' },
   { href: 'pages/widgets.html', image: deux, titre: 'Mon Profil' },
@@ -17,18 +20,49 @@ const elementsMenu = [
   { href: 'pages/forms/basic_elements.html', image: quatre, titre: 'Ma Banque' },
   { href: 'pages/charts/chartjs.html', image: cinq, titre: 'Coffre-fort' },
 ]
-export const PageLayout = ({ children }) => (
-  <div className='container-scroller'>
-    <HorizontalNav />
-    <div className='container-fluid page-body-wrapper'>
-      <Nav icon={face4} nom='Sara El Amrani' type='Particulier' options={elementsMenu} />
-      <Modal />
-      {children}
-    </div>
-  </div>
-)
-PageLayout.propTypes = {
-  children: PropTypes.node,
+
+class PageLayout extends React.Component {
+  constructor () {
+    super()
+    this.renderChildren = this.renderChildren.bind(this)
+  }
+
+  renderChildren () {
+    return this.props.children
+  }
+  componentWillMount () {
+    this.props.getProspect('string')
+  }
+
+  render () {
+    return (
+      <div className='container-scroller'>
+        <HorizontalNav />
+        <div className='container-fluid page-body-wrapper'>
+          <Nav icon={face4} nom={this.props.prospect && this.props.prospect.firstName}
+            type={this.props.prospect && this.props.prospect.typeProspect === 'P' ? 'Particulier' : null}
+            options={elementsMenu} />
+          <Modal />
+          {this.renderChildren()}
+        </div>
+      </div>
+    )
+  }
 }
 
-export default PageLayout
+PageLayout.propTypes = {
+  children: PropTypes.node,
+  getProspect: PropTypes.func.isRequired,
+  prospect: PropTypes.object,
+}
+
+const mapStateToProps = (state, props) => ({
+  prospect: state.prospect.getIn(['prospect', 'result']) &&
+   state.prospect.getIn(['prospect', 'result']).toJS(),
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  getProspect: (id) => { dispatch(getProspect(id)) },
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(PageLayout);

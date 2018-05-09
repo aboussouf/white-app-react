@@ -10,7 +10,6 @@ import '../../../asserts/css/style.scss'
 class Dashboard extends React.Component {
   componentWillMount () {
     this.props.getProspect('string')
-    console.log("alert",this.props)
   }
 
   render () {
