@@ -1,0 +1,8 @@
+{
+  "realm": "core",
+  "clientId": "openid-web",
+  "auth-server-url": "http://10.6.1.42:8080/auth",
+  "ssl-required": "external",
+  "resource": "openid-web",
+  "public-client": true
+}
