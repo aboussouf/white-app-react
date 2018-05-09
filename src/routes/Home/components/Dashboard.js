@@ -19,12 +19,42 @@ import Nav from '../../../components/Nav'
 import MenuItem from '../../../components/MenuItem'
 import HorizontalNav from '../../../components/HorizontalNav'
 
-const elementsMenu = [
-  {href: "index.html", image: un , titre: '  Mon Espace'},
-  {href: "pages/widgets.html", image: deux, titre: '  Mon Profil'},
-  {href: "pages/ui-features/buttons.html", image: trois, titre: '  Mon Agence'},
-  {href: "pages/forms/basic_elements.html", image: quatre, titre: '  Ma Banque'},
-  {href: "pages/charts/chartjs.html", image: cinq, titre: '  Coffre-fort'},
+const elementsMenu= [
+    {
+        id: 1,
+        href: "index.html",
+        image: un ,
+        titre: '  Mon Espace',
+        enabled: true
+    },
+    {
+        id: 2,
+        href: "pages/widgets.html",
+        image: deux,
+        titre: '  Mon Profil',
+        enabled: true
+    },
+    {
+        id: 3,
+        href: "pages/ui-features/buttons.html",
+        image: trois,
+        titre: '  Mon Agence',
+        enabled: true
+    },
+    {
+        id: 4,
+        href: "pages/forms/basic_elements.html",
+        image: quatre,
+        titre: '  Ma Banque',
+        enabled: true
+    },
+    {
+        id: 5,
+        href: "pages/charts/chartjs.html",
+        image: cinq,
+        titre: '  Coffre-fort',
+        enabled: true
+    }
 ];
 
 
@@ -49,13 +79,13 @@ export const Dashboard = () => (
           <div className="row">
              <div className="col-xl-5 col-lg-5 col-md-5 col-sm-6 grid-margin stretch-card">
               <div className="card card-statistics">
-                <Card icon={user} titre="Mon Profil" soustitre="Votre profil est complet à 25%" label="Compléter mon profil" classNameI="mdi mdi-alert-octagon mr-1" progressbar="true"/>
+                <Card icon={user} titre="Mon Profil" soustitre="Votre profil est complet à 25%" label="Compléter mon profil" classNameH="card-title font-weight-bold text-right mb-0" classNameI="mdi mdi-alert-octagon mr-1" progressbar="true"/>
 
                </div>
             </div>
             <div className="col-xl-5 col-lg-5 col-md-5 col-sm-6 grid-margin stretch-card">
               <div className="card card-statistics">
-              <Card icon={agence} titre="Mon Agence" soustitre="Préparez vos rendez-vous" label="Voir mes rendez-vous" classNameI="mdi mdi-bookmark-outline mr-1"/>
+              <Card icon={agence} titre="Mon Agence" soustitre="Préparez vos rendez-vous" label="Voir mes rendez-vous" classNameH="card-title font-weight-bold text-right mb-0" classNameI="mdi mdi-bookmark-outline mr-1"/>
 
               </div>
             </div>
@@ -63,12 +93,12 @@ export const Dashboard = () => (
            <div className="row">
             <div className="col-xl-5 col-lg-5 col-md-5 col-sm-6 grid-margin stretch-card">
               <div className="card card-statistics">
-              <Card icon={catalogue} titre="Ma Banque" soustitre="Des offres qui vous ressemblent" label="Parcourir le catalogue" classNameI="mdi mdi-calendar mr-1"/>
+              <Card icon={catalogue} titre="Ma Banque" soustitre="Des offres qui vous ressemblent" label="Parcourir le catalogue" classNameH="card-title font-weight-bold text-right mb-0" classNameI="mdi mdi-calendar mr-1"/>
               </div>
             </div>
             <div className="col-xl-5 col-lg-5 col-md-5 col-sm-6 grid-margin stretch-card">
               <div className="card card-statistics">
-              <Card icon={coffre} titre="Mon Coffre-Fort" soustitre="Vos documents importants" label="Voir mes documents" classNameI="mdi mdi-reload mr-1"/>
+              <Card icon={coffre} titre="Mon Coffre-Fort" soustitre="Vos documents importants" label="Voir mes documents" classNameH="card-title font-weight-bold text-right mb-0" classNameI="mdi mdi-reload mr-1"/>
               </div>
             </div>
           </div>
